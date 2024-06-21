@@ -11,10 +11,8 @@ class Command(BaseCommand):
         parser.add_argument("receiver", nargs="+", type=str, help="이메일 수신자 주소")
 
     def handle(self, *args, **options):
-        subject = (
-            "장고를 활용한 이메일 발송"  # TODO: 템플릿 시스템을 통해 문자열 완성하기
-        )
-        content = "메세지 내용입니다."  # TODO: 템플릿 시스템을 통해 문자열 완성하기
+        subject = "장고를 활용한 이메일 발송"
+        content = "메세지 내용입니다."
         sender_email = settings.DEFAULT_FROM_EMAIL
         receiver_email_list: List[str] = options["receiver"]
 
